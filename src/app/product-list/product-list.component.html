@@ -1,0 +1,33 @@
+<div class="top-cptainer">
+  <h2>لیست محصولات</h2>
+  <app-button (onClick)="openModal()"></app-button>
+</div>
+
+<div class="container">  
+<table>
+  <thead>
+    <tr>
+      <th>نام</th>
+      <th>کد</th>
+      <th>قیمت</th>
+      <th>عملیات</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.name }}</td>
+      <td>{{ product.code }}</td>
+      <td>{{ product.price }}</td>
+
+      <td class="btn-container">
+        <button  class="btn" (click)="openEditModal(product)">ویرایش</button>
+        <button  class="btn" (click)="deleteProduct(product.id)">حذف</button>
+      </td>
+      
+    </tr>
+  </tbody>
+</table>
+<app-modal *ngIf="showModal" [product]="selectedProduct" (save)="saveProduct($event)" (close)="closeModal()"></app-modal>
+
+
+</div>
