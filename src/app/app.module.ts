@@ -12,6 +12,7 @@ import { PreventTouchDirective } from './directives/prevent-touch.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { UserListComponent } from './user-list/user-list.component';
+import { UserModalComponent } from './user-modal/user-modal.component';
 
 
 const routes: Routes = [
@@ -30,7 +31,8 @@ const routes: Routes = [
     ButtonComponent,
     ModalComponent,
     PreventTouchDirective,
-    UserListComponent
+    UserListComponent,
+    UserModalComponent
     ],
   imports: [
     BrowserModule,

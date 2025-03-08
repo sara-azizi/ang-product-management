@@ -1,0 +1,38 @@
+<div class="modal" *ngIf="true">
+    <div class="modal-content">
+      <h2>افزودن کاربر جدید</h2>
+      <form [formGroup]="UserForm" (ngSubmit)="onSubmit()">
+        <div class="input-container">
+              <div class="input-group">
+                <label class="label">نام کاربر:</label>
+                <input class="input" formControlName="name" type="text" preventTouch/>
+                <div class="error" [class.visible]="UserForm.controls['name'].invalid && UserForm.controls['name'].touched">
+                  لطفا نام کاربر را به درستی وارد کنید
+                </div>
+              </div>
+
+              <div class="input-group">
+                  <label class="label">ایمیل کاربر</label>
+                  <input class="input" formControlName="email" type="text" preventTouch/>
+                  <div class="error" [class.visible]="UserForm.controls['email'].invalid && UserForm.controls['email'].touched">
+                    لطفا ایمیل را به درستی وارد کنید
+                  </div>
+              </div>
+
+              <div class="input-group">
+                  <label class="label">شماره تلفن کاربر</label>
+                  <input class="input" formControlName="phone" type="number" preventTouch />
+                  <div class="error" [class.visible]="UserForm.controls['phone'].invalid && UserForm.controls['phone'].touched">
+                    لطفا شماره را به درستی وارد کنید
+                  </div>
+              </div>  
+        </div>
+
+        <div class="btn-container">
+          <button type="submit">ثبت</button>
+          <button class="close" type="button" (click)="closeUserModal()">بستن</button>
+        </div>
+        
+      </form>
+    </div>
+  </div>

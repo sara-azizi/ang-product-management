@@ -1,0 +1,133 @@
+*{
+    font-family: 'Vazir', sans-serif;
+  }
+  h2{
+    color: #174b1a;
+    margin-bottom: 35px;
+  }
+  .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  .modal-content {
+      box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.815);
+      text-align: center;
+      background: white;
+      padding: 20px;
+      border-radius: 5px;
+    }
+  .input-container{
+    display: flex;
+    width: 1000px;
+    justify-content: center;
+  }
+  form{
+    width: 800px;
+    display: flex;
+    direction: rtl;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  form button {
+      display: flex;
+      justify-content: center;
+      font-family: 'Vazir', sans-serif;
+      background-color: #4CAF50; 
+      color: white; 
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer; 
+      font-size: 14px; 
+      transition: background-color 0.3s; 
+      height: 40px;
+      width: 60px;
+      text-align: center;
+      
+    }
+  
+  .btn-container{
+    display: flex;
+    gap: 10px;
+    width: 718px;
+    align-items: start;
+    justify-content: end;
+    margin-top: -10px;
+    }
+  
+  form button:hover { 
+      background-color: #27792b; 
+      transform: scale(1.02);
+    }
+  
+  .btn-container .close{
+    background-color: transparent;
+    color: #27792b;
+    border: #27792b;
+    outline: 3px #4CAF50 solid;
+    outline-offset: -3px;
+    border-radius: 5px;  
+  }
+  
+  .input {
+    max-width: 190px;
+    height: 44px;
+    background-color: #05060f0f;
+    border-radius: .5rem;
+    padding: 0 1rem;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+    }
+  
+  .label {
+    padding-right: 3px;
+    display: block;
+    margin-bottom: .3rem;
+    font-size: .9rem;
+    font-weight: bold;
+    color: #05060f99;
+    transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+  }
+  
+  .input:hover, .input:focus, .input-group:hover .input {
+    outline: none;
+    border-color: #05060f;
+  }
+  
+  .input-group:hover .label, .input:focus {
+    color: #05060fc2;
+  }
+  .input-group{
+    display: flex;
+    padding: 0 1rem;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  /* .error-field {
+    border: 2px solid red; 
+    outline: none;
+  }  */
+  
+  
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none; 
+  }
+  
+  .error.visible {
+    display: block; 
+  }
+  
+  

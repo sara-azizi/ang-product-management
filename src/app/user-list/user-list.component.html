@@ -1,28 +1,38 @@
 <div class="top-cptainer">
-   <h2>لیست کاربران</h2>
-</div>
- 
+    <h2>لیست کاربران</h2>
+    <button (click)="openUserModal()"> افزودن کاربر جدید </button>
+    <!-- <app-button (onClick)="openUserModal()">ُ</app-button> -->
+ </div>
+  
 <div class="container">  
- <table>
-   <thead>
-     <tr>
-       <th>نام</th>
-       <th>ایمیل</th>
-       <th>تلفن</th>
-     </tr>
-   </thead>
-
-   <tbody *ngIf="users$ | async as users">
-     <tr *ngFor="let user of users">
-       <td>{{ user.name }}</td>
-       <td>{{ user.email }}</td>
-       <td>{{ user.phone }}</td>
-     </tr>
-   </tbody>
- </table>  
+  <table>
+    <thead>
+      <tr>
+        <th>شماره</th>
+        <th>نام</th>
+        <th>ایمیل</th>
+        <th>تلفن</th>
+      </tr>
+    </thead>
  
-</div>
-
-
-
+    <tbody *ngIf="users$ | async as users">
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+      </tr>
+      <tr *ngFor="let user of newUsers">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+      </tr>
+    </tbody>
+  </table>  
+  <app-user-modal *ngIf="showUserModal" (save)="saveUser($event)" (close)="closeUserModal()"></app-user-modal>
+ </div>
  
+ 
+ 
+  
