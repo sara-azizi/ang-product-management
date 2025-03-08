@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserModalComponent } from './user-modal/user-modal.component';
+import { DateInputComponent } from './date-input/date-input.component';
 
 
 const routes: Routes = [
@@ -32,7 +33,8 @@ const routes: Routes = [
     ModalComponent,
     PreventTouchDirective,
     UserListComponent,
-    UserModalComponent
+    UserModalComponent,
+    DateInputComponent
     ],
   imports: [
     BrowserModule,
