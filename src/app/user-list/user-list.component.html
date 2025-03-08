@@ -1,0 +1,52 @@
+<!-- <button (click)="toggleUserList()" class="nav-button">
+    لیست مشتری‌ها
+  </button> -->
+<!-- 
+  
+<div class="user-list">
+    <div class="user-list-container">
+      <h3>لیست کاربران</h3>
+      <div class="loading" *ngIf="!(users$ | async)">در حال بارگذاری...</div>
+      
+      <ul *ngIf="users$ | async as users">
+        <li *ngFor="let user of users">
+          <div class="user-card">
+            <p><strong>نام:</strong> {{ user.name }}</p>
+            <p><strong>ایمیل:</strong> {{ user.email }}</p>
+            <p><strong>تلفن:</strong> {{ user.phone }}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div> -->
+
+
+  <div class="top-cptainer">
+    <h2>لیست کاربران</h2>
+  </div>
+  
+  <div class="container">  
+  <table>
+    <thead>
+      <tr>
+        <th>نام</th>
+        <th>ایمیل</th>
+        <th>تلفن</th>
+      </tr>
+    </thead>
+
+
+    <tbody *ngIf="users$ | async as users">
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+      </tr>
+    </tbody>
+  </table>  
+  
+  </div>
+
+
+
+  

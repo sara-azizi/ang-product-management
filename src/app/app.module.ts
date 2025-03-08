@@ -9,10 +9,15 @@ import { ProductTypeComponent } from './product-type/product-type.component';
 import { ButtonComponent } from './button/button.component';
 import { ModalComponent } from './modal/modal.component';
 import { PreventTouchDirective } from './directives/prevent-touch.directive';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { UserListComponent } from './user-list/user-list.component';
+
 
 const routes: Routes = [
   { path: 'products', component: ProductListComponent },
   { path: 'product-types', component: ProductTypeComponent },
+  { path: 'user-list', component: UserListComponent },
   { path: '', redirectTo: '/products', pathMatch: 'full' }
 ];
 
@@ -25,11 +30,14 @@ const routes: Routes = [
     ButtonComponent,
     ModalComponent,
     PreventTouchDirective,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    CommonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
