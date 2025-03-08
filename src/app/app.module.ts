@@ -31,7 +31,7 @@ const routes: Routes = [
     ModalComponent,
     PreventTouchDirective,
     UserListComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
