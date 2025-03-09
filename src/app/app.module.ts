@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserModalComponent } from './user-modal/user-modal.component';
 import { DateInputComponent } from './date-input/date-input.component';
+import { PersianDateFormatDirective } from './persian-date-format.directive'
 
 
 const routes: Routes = [
@@ -34,7 +35,8 @@ const routes: Routes = [
     PreventTouchDirective,
     UserListComponent,
     UserModalComponent,
-    DateInputComponent
+    DateInputComponent,
+    PersianDateFormatDirective
     ],
   imports: [
     BrowserModule,

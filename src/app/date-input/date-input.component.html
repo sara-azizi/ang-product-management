@@ -1,1 +1,38 @@
-<p>date-input works!</p>
+ <div class="container">
+  <form [formGroup]="dateForm" (ngSubmit)="onSubmit()">
+    <div class="input-group">
+      <input
+        id="persianDate"
+        type="text"
+        formControlName="persianDate"
+        persianDateFormat
+        placeholder="1403/05/15"
+        class="input"
+      />
+      <div
+        *ngIf="dateForm.controls['persianDate'].invalid && dateForm.controls['persianDate'].touched"
+        class="error"
+      >
+        <div *ngIf="dateForm.controls['persianDate'].errors?.['required']">
+          تاریخ الزامی است!
+        </div>
+        <div *ngIf="dateForm.controls['persianDate'].errors?.['pattern']">
+          فرمت تاریخ باید به شکل 1403/05/15 باشد!
+        </div>
+        <div *ngIf="dateForm.controls['persianDate'].errors?.['invalidFormat']">
+          تاریخ نامعتبر است!
+        </div>
+        <div *ngIf="dateForm.controls['persianDate'].errors?.['invalidYear']">
+          سال باید بین 1300 و 1500 باشد!
+        </div>
+        <div *ngIf="dateForm.controls['persianDate'].errors?.['invalidMonth']">
+          ماه باید بین 1 و 12 باشد!
+        </div>
+        <div *ngIf="dateForm.controls['persianDate'].errors?.['invalidDay']">
+          روز نامعتبر است!
+        </div>
+      </div>
+    </div>
+    <button type="submit">ثبت</button>
+  </form>
+</div>
