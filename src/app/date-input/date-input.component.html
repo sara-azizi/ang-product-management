@@ -1,4 +1,5 @@
- <div class="container">
+ <div class="input-group">
+  <label class="label">کد محصول:</label>
   <form [formGroup]="dateForm" (ngSubmit)="onSubmit()">
     <div class="input-group">
       <input
@@ -8,31 +9,32 @@
         persianDateFormat
         placeholder="1403/05/15"
         class="input"
+        preventTouch
       />
       <div
         *ngIf="dateForm.controls['persianDate'].invalid && dateForm.controls['persianDate'].touched"
         class="error"
       >
-        <div *ngIf="dateForm.controls['persianDate'].errors?.['required']">
+        <div *ngIf="dateForm.controls['persianDate'].errors?.['required']" class="dateError">
           تاریخ الزامی است!
         </div>
-        <div *ngIf="dateForm.controls['persianDate'].errors?.['pattern']">
+        <div *ngIf="dateForm.controls['persianDate'].errors?.['pattern']" class="dateError">
           فرمت تاریخ باید به شکل 1403/05/15 باشد!
         </div>
-        <div *ngIf="dateForm.controls['persianDate'].errors?.['invalidFormat']">
+        <div *ngIf="dateForm.controls['persianDate'].errors?.['invalidFormat']" class="dateError">
           تاریخ نامعتبر است!
         </div>
-        <div *ngIf="dateForm.controls['persianDate'].errors?.['invalidYear']">
+        <div *ngIf="dateForm.controls['persianDate'].errors?.['invalidYear']" class="dateError">
           سال باید بین 1300 و 1500 باشد!
         </div>
-        <div *ngIf="dateForm.controls['persianDate'].errors?.['invalidMonth']">
+        <div *ngIf="dateForm.controls['persianDate'].errors?.['invalidMonth']" class="dateError">
           ماه باید بین 1 و 12 باشد!
         </div>
-        <div *ngIf="dateForm.controls['persianDate'].errors?.['invalidDay']">
+        <div *ngIf="dateForm.controls['persianDate'].errors?.['invalidDay']" class="dateError">
           روز نامعتبر است!
         </div>
       </div>
     </div>
-    <button type="submit">ثبت</button>
+    <button  style="visibility: hidden;display: none;" type="submit">ثبت</button>
   </form>
 </div>

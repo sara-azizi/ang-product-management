@@ -1,38 +1,37 @@
 <div class="modal" *ngIf="true">
-    <div class="modal-content">
-      <h2>{{ product ? 'ویرایش محصول' : 'ایجاد محصول جدید' }}</h2>
-      <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
-        <div class="input-container">
-              <div class="input-group">
-                <label class="label">نام محصول:</label>
-                <input class="input" formControlName="name" type="text" preventTouch/>
-                <div class="error" [class.visible]="productForm.controls['name'].invalid && productForm.controls['name'].touched">
-                  لطفا نام محصول را به درستی وارد کنید
-                </div>
-              </div>
-
-              <div class="input-group">
-                  <label class="label">کد محصول:</label>
-                  <input class="input" formControlName="code" type="text" preventTouch/>
-                  <div class="error" [class.visible]="productForm.controls['code'].invalid && productForm.controls['code'].touched">
-                    لطفا کد محصول را به درستی وارد کنید
-                  </div>
-              </div>
-
-              <div class="input-group">
-                  <label class="label">قیمت محصول:</label>
-                  <input class="input" formControlName="price" type="number" preventTouch />
-                  <div class="error" [class.visible]="productForm.controls['price'].invalid && productForm.controls['price'].touched">
-                    لطفا قیمت محصول را به درستی وارد کنید
-                  </div>
-              </div>  
+  <div class="modal-content">
+    <h2>{{ product ? 'ویرایش محصول' : 'ایجاد محصول جدید' }}</h2>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <div class="input-container">
+        <div class="input-group">
+          <label class="label">نام محصول:</label>
+          <input class="input" formControlName="name" type="text" preventTouch/>
+          <div class="error" [class.visible]="productForm.controls['name'].invalid && productForm.controls['name'].touched">
+            لطفا نام محصول را به درستی وارد کنید
+          </div>
         </div>
 
-        <div class="btn-container">
-          <button type="submit" >ثبت</button>
-          <button class="close" type="button" (click)="closeModal()">بستن</button>
+        <div class="input-group">
+          <label class="label">کد محصول:</label>
+          <input class="input" formControlName="code" type="text" preventTouch/>
+          <div class="error" [class.visible]="productForm.controls['code'].invalid && productForm.controls['code'].touched">
+            لطفا کد محصول را به درستی وارد کنید
+          </div>
         </div>
-        
-      </form>
-    </div>
+
+        <div class="input-group">
+          <label class="label">قیمت محصول:</label>
+          <input class="input" formControlName="price" type="number" preventTouch />
+          <div class="error" [class.visible]="productForm.controls['price'].invalid && productForm.controls['price'].touched">
+            لطفا قیمت محصول را به درستی وارد کنید
+          </div>
+        </div>  
+
+        <app-date-input (formSubmitted)="onFormSubmitted($event)"></app-date-input>
+      </div>
+
+      <button type="submit">ثبت</button>
+      <button class="close" type="button" (click)="closeModal()">بستن</button>
+    </form>
   </div>
+</div>

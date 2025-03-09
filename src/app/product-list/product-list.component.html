@@ -1,15 +1,34 @@
-<div class="top-cptainer">
-  <h2>لیست محصولات</h2>
-  <app-button (onClick)="openModal()"></app-button>
-</div>
+<div>
+  <!-- <button (click)="openModal()">ایجاد محصول جدید</button>
+  <app-modal
+    *ngIf="showModal"
+    [product]="selectedProduct"
+    (save)="saveProduct($event)"
+    (close)="closeModal()"
+  ></app-modal> -->
 
-<div class="container">  
-<table>
-  <thead>
-    <tr>
+
+  
+  <div class="top-cptainer">
+    <h2>لیست محصولات</h2>
+    <app-button (onClick)="openModal()"></app-button>
+    <!-- <button (click)="openModal()">ایجاد محصول جدید</button> -->
+    <app-modal
+      *ngIf="showModal"
+      [product]="selectedProduct"
+      (save)="saveProduct($event)"
+      (close)="closeModal()"
+    ></app-modal>
+  </div>
+
+  <div class="container">  
+    <table>
+      <thead>
+        <tr>
       <th>نام</th>
       <th>کد</th>
       <th>قیمت</th>
+      <th>تاریخ</th>
       <th>عملیات</th>
     </tr>
   </thead>
@@ -18,6 +37,7 @@
       <td>{{ product.name }}</td>
       <td>{{ product.code }}</td>
       <td>{{ product.price }}</td>
+      <td>{{ product.date }}</td>
 
       <td class="btn-container">
         <button  class="btn" (click)="openEditModal(product)">ویرایش</button>
@@ -30,4 +50,5 @@
 <app-modal *ngIf="showModal" [product]="selectedProduct" (save)="saveProduct($event)" (close)="closeModal()"></app-modal>
 
 
+</div>
 </div>
