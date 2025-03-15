@@ -42,13 +42,12 @@ export class ModalComponent implements OnInit {
       const productData: Product = {
         id: this.product?.id || 0,
         ...this.productForm.value,
-        date: this.submittedDate // تاریخ رو اینجا اضافه می‌کنیم
+        date: this.submittedDate 
       };
       this.save.emit(productData);
       this.closeModal();
     } else {
       this.productForm.markAllAsTouched();
-      console.log('فرم یا تاریخ اشتباهه');
     }
   }
 
