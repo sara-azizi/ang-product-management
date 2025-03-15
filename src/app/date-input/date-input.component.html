@@ -1,41 +1,14 @@
 <form [formGroup]="dateForm" (ngSubmit)="onSubmit()">
   <div class="input-group">
     <label class="label">کد محصول:</label>
+
     <input id="persianDate" type="text" formControlName="persianDate" persianDateFormat placeholder="1403/05/15"
       class="input" preventTouch />
-    <!-- <div *ngIf="dateForm.get('persianDate')?.errors as errors" class="dateError"> -->
-      
-      <div *ngIf="dateForm.get('persianDate')?.invalid && dateForm.get('persianDate')?.touched" class="dateError">
+
+    <div *ngIf="dateForm.get('persianDate')?.invalid && (dateForm.get('persianDate')?.touched || dateForm.get('persianDate')?.dirty)" class="dateError">
         {{ textError }}
-      </div>
-      
-      <!-- {{ errors['invalidValue'] || errors['invalidFormat'] || errors['invalidYear'] || errors['invalidMonth'] || errors['invalidDay'] }} -->
-      <!-- {{getTextEror()}} -->
-    <!-- </div> -->
-    <!-- 
-        <div
-          *ngIf="dateForm.controls['persianDate'].invalid && dateForm.controls['persianDate'].touched" class="error">
-      
-        
-        <div *ngIf="dateForm.controls['persianDate'].errors?.['required']" class="dateError">
-          تاریخ الزامی است!
-        </div>
-        <div *ngIf="dateForm.controls['persianDate'].errors?.['pattern']" class="dateError">
-          فرمت تاریخ باید به شکل 1403/05/15 باشد!
-        </div>
-        <div *ngIf="dateForm.controls['persianDate'].errors?.['invalidFormat']" class="dateError">
-          تاریخ نامعتبر است!
-        </div>
-        <div *ngIf="dateForm.controls['persianDate'].errors?.['invalidYear']" class="dateError">
-          سال باید بین 1300 و 1500 باشد!
-        </div>
-        <div *ngIf="dateForm.controls['persianDate'].errors?.['invalidMonth']" class="dateError">
-          ماه باید بین 1 و 12 باشد!
-        </div>
-        <div *ngIf="dateForm.controls['persianDate'].errors?.['invalidDay']" class="dateError">
-          روز نامعتبر است!
-        </div>
-      </div> -->
+    </div>
+
   </div>
   <button style="visibility: hidden;display: none;" type="submit">ثبت</button>
 </form>
